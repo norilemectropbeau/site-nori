@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', 'Poppins', 'Montserrat', sans-serif;
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .bg-earth {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3Cfilter id='invert'%3E%3CfeColorMatrix type='matrix' values='-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23invert)'%3E%3Crect fill='%23000' width='1200' height='800'/%3E%3Ccircle cx='200' cy='200' r='80' fill='%23333'/%3E%3Ccircle cx='800' cy='300' r='100' fill='%23222'/%3E%3Ccircle cx='400' cy='500' r='60' fill='%23444'/%3E%3Ccircle cx='1000' cy='600' r='90' fill='%23333'/%3E%3Ccircle cx='600' cy='150' r='50' fill='%23555'/%3E%3Cpath d='M0 400 Q300 350 600 400 T1200 400 L1200 800 L0 800 Z' fill='%23111'/%3E%3Cpath d='M0 0 Q200 100 400 50 T800 100 L1200 150 L1200 0 Z' fill='%23222'/%3E%3Cellipse cx='500' cy='400' rx='150' ry='80' fill='%23333' opacity='0.7'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000;
+  }
+
+  .outlined-text {
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+  }
+
+  @keyframes blink {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
